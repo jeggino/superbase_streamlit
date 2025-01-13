@@ -19,7 +19,7 @@ def run_query():
 
 rows = run_query()
 
-df_raw = pd.Dataframe(rows.data)
+df_raw = pd.DataFrame(rows.data)
 df_raw
 # # Print results.
 # for row in rows.data:
