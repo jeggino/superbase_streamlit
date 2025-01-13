@@ -27,6 +27,7 @@ if st.button('insert'):
         .insert({"key": 654654, "waarnemer": "pasquale"})
         .execute()
     )
+    st.rerun()
 
 if st.button('update'):
     response = (
@@ -35,6 +36,7 @@ if st.button('update'):
         .eq("key", 654654)
         .execute()
     )
+    st.rerun()
 
 if st.button('delete'):
     response = (
@@ -43,6 +45,7 @@ if st.button('delete'):
         .eq("key", 654654)
         .execute()
     )
+    st.rerun()
 
 
 
