@@ -18,6 +18,6 @@ def run_query():
     return supabase.table("df").select("*").execute()
     
 df_raw = run_query()
-df_raw['data']
+df_raw.keys()
 # df_raw = pd.DataFrame(run_query()['data'])
 # df_raw
