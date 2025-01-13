@@ -17,6 +17,6 @@ supabase = init_connection()
 # Uses st.cache_data to only rerun when the query changes or after 10 min.
 def run_query():
     return supabase.table("df").select("*").execute()
-
-df_raw = pd.DataFrame(run_query()['data'])
-df_raw
+run_query()
+# df_raw = pd.DataFrame(run_query()['data'])
+# df_raw
