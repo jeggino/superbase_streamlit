@@ -1,16 +1,11 @@
 import streamlit as st
-from supabase import create_client, Client
-
-import pandas as pd
+from st_supabase_connection import SupabaseConnection
 
 # Initialize connection.
-# Uses st.cache_resource to only run once.
-def init_connection():
-    url = st.secrets["SUPABASE_URL"]
-    key = st.secrets["SUPABASE_KEY"]
-    return create_client(url, key)
+conn = st.connection("supabase",type=SupabaseConnection)
 
-supabase = init_connection()
+# Perform query.
+rows = conn.query("*", table="mytable", ttl="10m").execute()
 
 # Perform query.
 # Uses st.cache_data to only rerun when the query changes or after 10 min.
