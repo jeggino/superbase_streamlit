@@ -21,6 +21,14 @@ rows = run_query()
 
 df_raw = pd.DataFrame(rows.data)
 df_raw
+
+if st.button('insert')
+    response = (
+        supabase.table("df_observations")
+        .insert({"key": 654654, "waarnemer": "pasquale"})
+        .execute()
+    )
+
 # # Print results.
 # for row in rows.data:
 #     st.write(f"{row['waarnemer']} has a :{row['sp']} found ({row['datum']}):")
