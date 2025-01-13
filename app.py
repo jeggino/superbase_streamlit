@@ -37,7 +37,13 @@ if st.button('update'):
         .execute()
     )
 
+if st.button('delete'):
+    response = (
+        supabase.table("df_observations")
+        .delete()
+        .eq("key", 654654)
+        .execute()
+    )
 
-# # Print results.
-# for row in rows.data:
-#     st.write(f"{row['waarnemer']} has a :{row['sp']} found ({row['datum']}):")
+
+
