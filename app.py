@@ -17,7 +17,9 @@ def run_query():
     return supabase.table("df_observations").select("*").execute()
 
 rows = run_query()
-    
-# Print results.
-for row in rows.data:
-    st.write(f"{row['waarnemer']} has a :{row['sp']} found ({row['datum']}):")
+
+df_raw = pd.Dataframe(rows.data)
+df_raw
+# # Print results.
+# for row in rows.data:
+#     st.write(f"{row['waarnemer']} has a :{row['sp']} found ({row['datum']}):")
