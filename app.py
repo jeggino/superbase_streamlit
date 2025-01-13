@@ -5,7 +5,7 @@ from st_supabase_connection import SupabaseConnection
 conn = st.connection("supabase",type=SupabaseConnection)
 
 # Perform query.
-rows = conn.query("*", table="mytable", ttl="10m").execute()
+rows = conn.query("*", table="df", ttl="10m").execute()
 
 # Perform query.
 # Uses st.cache_data to only rerun when the query changes or after 10 min.
