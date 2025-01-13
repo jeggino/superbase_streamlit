@@ -18,5 +18,6 @@ def run_query():
 
 rows = run_query()
 
-rows
+for row in rows.data:
+    st.write(f"{row['datum']} has a :{row['waarnemer']}:")
 
