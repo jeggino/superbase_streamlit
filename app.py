@@ -17,3 +17,6 @@ def run_query():
     return supabase.table("df").select("*").execute()
 
 rows = run_query()
+
+rows
+
