@@ -5,7 +5,6 @@ import pandas as pd
 
 # Initialize connection.
 # Uses st.cache_resource to only run once.
-@st.cache_resource
 def init_connection():
     url = st.secrets["SUPABASE_URL"]
     key = st.secrets["SUPABASE_KEY"]
@@ -17,6 +16,7 @@ supabase = init_connection()
 # Uses st.cache_data to only rerun when the query changes or after 10 min.
 def run_query():
     return supabase.table("df").select("*").execute()
+    
 run_query()
 # df_raw = pd.DataFrame(run_query()['data'])
 # df_raw
