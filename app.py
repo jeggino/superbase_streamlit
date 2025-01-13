@@ -17,7 +17,8 @@ supabase = init_connection()
 def run_query():
     return supabase.table("df").select("*").execute()
     
-df_raw = run_query()
-df_raw.keys()
-# df_raw = pd.DataFrame(run_query()['data'])
-# df_raw
+rows = run_query()
+
+# Print results.
+for row in rows.data:
+    st.write(f"{row['name']} has a :{row['pet']}:")
