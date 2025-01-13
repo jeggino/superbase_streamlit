@@ -1,6 +1,8 @@
 import streamlit as st
 from supabase import create_client, Client
 
+import pandas as pd
+
 # Initialize connection.
 # Uses st.cache_resource to only run once.
 @st.cache_resource
@@ -16,8 +18,5 @@ supabase = init_connection()
 def run_query():
     return supabase.table("df").select("*").execute()
 
-rows = run_query()
-
-for row in rows.data:
-    st.write(f"{row['datum']} has a :{row['waarnemer']}:")
-
+df_raw = pd.Dataframe(run_query())
+df_raw
