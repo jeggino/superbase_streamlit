@@ -17,6 +17,7 @@ supabase = init_connection()
 def run_query():
     return supabase.table("df").select("*").execute()
     
-run_query()
+df_raw = run_query()
+df_raw 
 # df_raw = pd.DataFrame(run_query()['data'])
 # df_raw
