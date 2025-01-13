@@ -32,7 +32,7 @@ if st.button('insert'):
 if st.button('update'):
     response = (
         supabase.table("df_observations")
-        .update({"name": "Antonio"})
+        .update({"waarnemer": "Antonio"})
         .eq("key", 654654)
         .execute()
     )
