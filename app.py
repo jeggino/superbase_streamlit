@@ -29,6 +29,15 @@ if st.button('insert'):
         .execute()
     )
 
+if st.button('update'):
+    response = (
+        supabase.table("df_observations")
+        .update({"name": "Antonio"})
+        .eq("key", 654654)
+        .execute()
+    )
+
+
 # # Print results.
 # for row in rows.data:
 #     st.write(f"{row['waarnemer']} has a :{row['sp']} found ({row['datum']}):")
